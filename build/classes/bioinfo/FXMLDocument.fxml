@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1179.0" style="-fx-background-color: #5EB299;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bioinfo.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="572.0" layoutY="580.0" onAction="#handleButtonAction" opacity="0.9" style="-fx-background-color: #434657;" text="Alinear" textFill="#eeebeb" visible="false" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <Pane layoutX="-6.0" prefHeight="200.0" prefWidth="1193.0">
+            <children>
+                <Accordion fx:id="acordeon" disable="true" layoutX="7.0" layoutY="-3.0" opacity="0.9" prefHeight="342.0" prefWidth="1187.0" visible="false">
+                    <panes>
+                        <TitledPane animated="false" prefHeight="418.0" prefWidth="875.0" style="-fx-background-color: #434657;" text="Secuencias Alineadas">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" opacity="0.5" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #5EB299;">
+                           <children>
+                              <ScrollPane fx:id="scroll1" fitToHeight="true" fitToWidth="true" layoutX="38.0" layoutY="33.0" opacity="0.98" prefHeight="134.0" prefWidth="1122.0" style="-fx-background-color: ;">
+                                 <content>
+                                    <AnchorPane fx:id="paneAlin" prefHeight="139.0" prefWidth="1123.0" />
+                                 </content>
+                              </ScrollPane>
+                              <Label layoutX="99.0" layoutY="174.0" text="Secuencias " textFill="ORANGE">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="33.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="157.0" layoutY="220.0" text="Alineadas" textFill="ORANGE">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="33.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutX="862.0" layoutY="185.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #002bff;" />
+                              <Pane layoutX="862.0" layoutY="220.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: red;" />
+                              <Label layoutX="912.0" layoutY="181.0" text="Alineadas" textFill="ORANGE">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="912.0" layoutY="216.0" text="Sin alineadas" textFill="ORANGE">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Matriz De Score">
+                            <content>
+                                <AnchorPane fx:id="paneScore" minHeight="0.0" minWidth="0.0" opacity="0.5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5EB299;">
+                                    <children>
+                                        <GridPane fx:id="matrizScore" alignment="CENTER" gridLinesVisible="true" layoutX="220.0" layoutY="90.0" style="-fx-border-color: ORANGE;">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="m1" alignment="CENTER" contentDisplay="CENTER" text="A" textFill="#002bff" GridPane.columnIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m2" style="-fx-text-alignment: CENTER;" text="G" textFill="#002bff" GridPane.columnIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m3" text="C" textFill="#002bff" GridPane.columnIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m4" text="T" textFill="#002bff" GridPane.columnIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m5" text="A" textFill="#002bff" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m10" text="G" textFill="#002bff" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m15" text="C" textFill="#002bff" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m20" text="T" textFill="#002bff" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m7" style="-fx-text-alignment: center;" text="-1" textFill="#002bff" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m6" style="-fx-text-alignment: center;" text="10" textFill="#002bff" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m11" style="-fx-text-alignment: center;" text="-1" textFill="#002bff" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m16" style="-fx-text-alignment: center;" text="-3" textFill="#002bff" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m22" style="-fx-text-alignment: center;" text="-4" textFill="#002bff" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m12" style="-fx-text-alignment: center;" text="7" textFill="#002bff" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m17" style="-fx-text-alignment: center;" text="-5" textFill="#002bff" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m23" style="-fx-text-alignment: center;" text="-3" textFill="#002bff" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m8" style="-fx-text-alignment: center;" text="-3" textFill="#002bff" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m13" style="-fx-text-alignment: center;" text="-5" textFill="#002bff" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m18" style="-fx-text-alignment: center;" text="9" textFill="#002bff" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m24" style="-fx-text-alignment: center;" text="0" textFill="#002bff" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m9" style="-fx-text-alignment: center;" text="-4" textFill="#002bff" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m14" style="-fx-text-alignment: center;" text="-3" textFill="#002bff" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m19" style="-fx-text-alignment: center;" text="0" textFill="#002bff" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="m25" style="-fx-text-alignment: center;" text="8" textFill="#002bff" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Comic Sans MS" size="21.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                        <Label layoutX="375.0" layoutY="33.0" text="Matriz de puntos" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="944.0" layoutY="33.0" prefHeight="35.0" prefWidth="98.0" text="GAP = -5" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="944.0" layoutY="72.0" prefHeight="35.0" prefWidth="98.0" text="A = 0" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="944.0" layoutY="120.0" prefHeight="35.0" prefWidth="98.0" text="G = 1" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="944.0" layoutY="165.0" prefHeight="35.0" prefWidth="98.0" text="C = 2" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="944.0" layoutY="206.0" prefHeight="35.0" prefWidth="98.0" text="T = 3" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="24.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" prefHeight="35.0" prefWidth="875.0" text="Puntaje">
+                            <content>
+                                <AnchorPane fx:id="matrizPuntaje" minHeight="0.0" minWidth="0.0" opacity="0.5" prefHeight="313.0" prefWidth="873.0" style="-fx-background-color: #5EB299;">
+                                    <children>
+                                        <Label layoutX="25.0" layoutY="105.0" text="El puntaje para su alineamiento es :" textFill="#002bff">
+                                            <font>
+                                                <Font name="Comic Sans MS" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Pane fx:id="paneMatriz" layoutX="476.0" layoutY="19.0" prefHeight="215.0" prefWidth="603.0" />
+                              <Label fx:id="puntos" layoutX="374.0" layoutY="105.0">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="20.0" />
+                                 </font>
+                                 <textFill>
+                                    <RadialGradient centerX="0.46111111111111114" centerY="0.5571428571428572" radius="0.5">
+                                       <stops>
+                                          <Stop color="#323131" />
+                                          <Stop color="#fa0005" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </textFill>
+                              </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+            </children>
+        </Pane>
+        <TextArea fx:id="txtSecuencia1" editable="false" layoutX="261.0" layoutY="392.0" opacity="0.4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #434657; -fx-font-size: 14; -fx-text-fill: #002bff;" visible="false" />
+        <TextArea fx:id="txtSecuencia2" editable="false" layoutX="763.0" layoutY="392.0" opacity="0.45" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #434657; -fx-font-size: 14; -fx-text-fill: #002bff;" visible="false" />
+        <Label fx:id="lblsec1" layoutX="329.0" layoutY="367.0" text="Secuencia 1" textFill="WHITE" visible="false" />
+        <Label fx:id="lblsec2" layoutX="831.0" layoutY="367.0" text="Secuencia 2" textFill="#f5f0f0" visible="false" />
+        <TextArea fx:id="txtSecuencia01" editable="false" layoutX="363.0" layoutY="425.0" onDragDropped="#dropping" onDragOver="#draggingOver" opacity="0.4" prefHeight="73.0" prefWidth="472.0" style="-fx-background-color: #434657; -fx-font-size: 14; -fx-text-fill: ORANGE;" text="                                             Deja el archivo aquí." AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="363.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="425.0" />
+        <Label fx:id="labelsecuencia01" layoutX="499.0" layoutY="367.0" text="Archivo secuencias" textFill="ORANGE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2" layoutX="296.0" layoutY="256.0" prefHeight="17.0" prefWidth="639.0" text="El algoritmo de Needleman-Wunsch sirve para realizar alineamientos ">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl3" layoutX="306.0" layoutY="281.0" prefHeight="17.0" prefWidth="639.0" text="globales de dos secuencias. Se suele utilizar en el ámbito de la ">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl4" layoutX="279.0" layoutY="306.0" prefHeight="17.0" prefWidth="639.0" text=" bioinformática para alinear secuencias de proteínas o de ácidos nucleicos.">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl7" layoutX="347.0" layoutY="217.0" text="Se han cargado correctamente las secuencias" visible="false">
+            <font>
+                <Font name="Comic Sans MS" size="25.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl6" layoutX="310.0" layoutY="255.0" text="puede proceder a alinearlas dando click en &quot;Alinear&quot;" visible="false">
+            <font>
+                <Font name="Comic Sans MS" size="25.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl1" layoutX="404.0" layoutY="200.0" text="Algoritmo de Needleman-Wunsch" textFill="ORANGE">
+            <font>
+                <Font name="Comic Sans MS" size="25.0" />
+            </font>
+        </Label>
+    </children>
+    <stylesheets>
+        <URL value="@css.css" />
+    </stylesheets>
+</AnchorPane>
